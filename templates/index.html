@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Whale Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="ocean-background">
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+        <div class="bubble bubble4"></div>
+        <div class="bubble bubble5"></div>
+    </div>
+    
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🐋 Blue Whale Game</h1>
+            <div class="score-board">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="high-score">High Score: <span id="highScore">0</span></div>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        
+        <div class="game-info" id="gameInfo">
+            <h2>Welcome to Blue Whale!</h2>
+            <p>Press <strong>SPACEBAR</strong> or <strong>CLICK</strong> to make the whale swim up</p>
+            <p>Avoid the obstacles and collect points!</p>
+            <button id="startBtn" class="start-btn">Start Game</button>
+        </div>
+        
+        <div class="game-over" id="gameOver" style="display: none;">
+            <h2>Game Over!</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn" class="start-btn">Play Again</button>
+        </div>
+        
+        <div class="controls">
+            <p>Controls: SPACEBAR or CLICK to swim up</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
